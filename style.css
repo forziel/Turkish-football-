@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-family: 'Nunito', sans-serif;
+}
+:root{
+   font-size: 62.5%;
+}
+body{
+   font-family: 'Nunito', sans-serif;
+}
+/*SECTION1*/
+.section1{
+   width: 100%;
+   height: 100vh;
+   background:rgba(0, 0, 10, 0.9);
+   display: flex;
+   overflow: hidden;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   position: relative;
+   margin-top: -1.2rem;
+}
+.title{
+   color: white;
+   font-size: 8rem;
+   font-weight: 700;
+   letter-spacing: 0.5rem;
+   margin-top: -5rem;
+   
+}
+.logos{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+.logos img{
+   position: absolute;
+   height: 25rem;
+   position: absolute;
+   margin-top: -20rem;
+   transform: scale(0);
+   transition: 1.5s transform;
+}
+.logos img.change{
+   transform: scale(1);
+}
+
+/*END OF SECTION1*/
+
+/*SECTION2*/
+.section2{
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(0, 0, 10, 0.9);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   overflow: hidden;
+}
+.title2 {
+   color: white;
+   font-size: 8rem;
+   font-weight: 700;
+   letter-spacing: 0.5rem;
+   margin-top: 2rem;
+
+}
+.stadiums{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+.stadium{
+   width: 30rem;
+   height: 45rem;
+   border: 0.1rem rgba(0, 0, 10, 0.9) solid;
+   margin: 0 5rem; 
+   border-radius: 2rem;
+   background-color: rgba(255, 255, 255, 1);
+   position: relative;
+   overflow: hidden;
+   transition: 1s all;
+   z-index: 0;
+}
+.stadium-animation{
+   content: '';
+   width: 30rem;
+   height: 50rem;
+   background-color: rgba(0, 0, 10, 0.9);
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform: translate(0, 100%);
+   transition: 1s all;
+   z-index: -1;
+}
+.stadium:hover{
+   border: 0.1rem white solid;
+}
+.stadium:hover .stadium-animation{
+   transform: translate(0,40%);
+   
+}
+.stadium img{
+   width: 100%;
+   z-index: 12;
+   
+   position: hidden;
+}
+.stadium:last-child img{
+   height: 20rem;
+}
+.stadium span{
+   display: block;
+   font-size: 3rem;
+   font-weight: 500;
+   color: rgba(0, 0, 10, 0.9);
+   margin-top: 3rem;
+   margin-left: 2rem;
+   z-index: 99999;
+   transition: 1s color;
+}
+.stadium:hover span{
+   color: rgba(255, 255, 255, 1);
+   z-index: 99999;
+}
+.stadium button{
+   margin-top: 5rem;
+   padding: 1rem 2.5rem;
+   background-color: rgba(0, 0, 10, 0.9);
+   border-radius: 1.5rem;
+   margin-left: 2rem;
+   color: rgba(255, 255, 255, 1);
+   font-weight: 500;
+   font-size: 1.5rem;
+   cursor: pointer;
+   border: 1px solid rgba(255, 255, 255, 1);
+   transition: 0.5s background-color , .5s color, 0.5s transform;
+   z-index: 10;
+}
+.stadium button:hover{
+   border: 1px solid white;
+   background-color: rgba(255, 255, 255, 1);
+   color: rgba(0, 0, 10, 0.9);
+   transform: scale(1.1);
+}
+
+/*END OF SECTION2*/
+
+/*SECTION3*/
+.section3-title{
+   color: white;
+   font-size: 8rem;
+   font-weight: 700;
+   letter-spacing: 0.5rem;
+   background-color: rgba(0, 0, 10, 0.9);
+   text-align: center;
+   padding-top: 5rem;
+}
+
+/*END OF SECTION3*/
+
+/*SECTION3*/
+.section3{
+   width: 100%;
+   height: 100vh;
+   background-color: rgba(0, 0, 10, 0.9);
+   overflow: hidden;
+   display: flex;
+   flex-wrap: wrap;
+   border-bottom: 1px solid white;
+}
+.cards{
+   width: 32rem;
+   height: 18rem;
+   position: relative;
+   margin: 5rem;
+   overflow: hidden;
+   position: relative;
+   display: block;
+   
+}
+.cards:after{
+   content: '';
+    border-top: 0.15rem solid white;
+    position: absolute;
+    width: 32rem;
+    height: 18rem;
+    left: 0;
+    top: 0;
+    transition: 0.6s top, 0.6s opacity;
+    opacity: 0;
+}
+.cards:before{
+   content: '';
+   border-right: 0.15rem solid white;
+   position: absolute;
+   width: 32rem;
+   height: 18rem;
+   right: 0;
+   top: 0;
+   transition: 0.6s right, 0.6s opacity;
+   z-index: 1;
+   opacity: 0;
+}
+.cards:hover:after{
+   top: 5rem;
+   opacity: 1;
+} 
+.cards:hover:before{
+   right: 5rem;
+   opacity: 1;
+} 
+.cards:hover img{
+   filter: blur(0.3rem);
+}
+.cards .name{
+   color: white;
+   font-size: 2rem;
+   z-index: 999;
+   position: absolute;
+   left: 2rem;
+   top: 1rem;
+   letter-spacing: 0.2rem;
+   font-weight: 600;
+   opacity: 0;
+   transition: 0.6s opacity, 0.6s transform;
+   transform: translate(0, -3rem);
+   text-transform: capitalize;
+}
+.cards:hover .name{
+   opacity: 1;
+   transform: translate(0, 0);
+}
+.cards img{
+   width: 100%;
+   position: absolute;
+   object-fit: cover;
+}
+
+/*END OF SECTION3*/
+
+/* SECTION4 */
+.section4{
+   width: 100%;
+   height: 35vh;
+   background-color: rgba(0, 0, 10, 0.9);
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.contact{
+   color: rgba(255, 255, 255, 1);
+   font-weight: 600;
+   font-size: 3.5rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+.contact span{
+   color: white;
+   font-weight: 400;
+   font-size: 1.5rem;
+   
+}
+.input-container{
+   
+}
+.input-container input{
+   padding: 1rem 1.5rem;
+   border: 0.1rem solid rgba(255, 255, 255, 1);
+   background-color: white;
+   border-radius: 0.5rem;
+}
+.input-container i{
+   
+}
+/* END OF SECTION4 */
+.copyright{
+   background-color: rgba(0, 0, 10, 0.9);
+   text-align: center;
+   color: white;
+   font-weight: 600;
+   font-size: 1.2rem;
+   padding-bottom: 1.5rem;
+   letter-spacing: 0.1rem;
+}
